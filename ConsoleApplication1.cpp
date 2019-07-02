@@ -3,10 +3,25 @@
 
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello World!\n"; 
+int main() {
+	// v1 is the current number, v2 is new input for comparison
+	int v1 = 0, v2 = 0;
+	// read first v1, and make sure there is v1
+	if (std::cin >> v1) {
+		int cnt = 1;
+		while (std::cin >> v2) {
+			if (v2 == v1)
+				++cnt;
+			else {
+				std::cout << v1 << " occurs " << cnt << " times" << std::endl;
+				v1 = v2;
+				cnt = 1;
+			}
+		}
+	}
+	return 0;
 }
+
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
 // 调试程序: F5 或调试 >“开始调试”菜单
